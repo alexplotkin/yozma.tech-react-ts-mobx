@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from '@emotion/styled'
+
+/* components */
+import Textarea from './components/textarea';
+import Search from './components/search';
+import Statistics from './components/statistics';
+
+/* styles */
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <AppContainer>
+            <AppTitle>Text querying</AppTitle>
+
+            <Textarea />
+
+            <Search />
+
+            <Statistics />
+        </AppContainer>
+    );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+`
+
+const AppTitle = styled.h1`
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+`
